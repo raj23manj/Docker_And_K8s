@@ -169,4 +169,6 @@
           * run, docker-compose up --build      
           
       * Multi Step Build Process
-        *        
+        *  Section 6, 79-80-81
+        
+  * Set up Docker, elastic Beankstalk  Section 7, 89      
