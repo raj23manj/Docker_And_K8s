@@ -171,4 +171,9 @@
       * Multi Step Build Process
         *  Section 6, 79-80-81
         
-  * Set up Docker, elastic Beankstalk  Section 7, 89      
+  * Set up Docker, elastic Beankstalk  Section 7, 89  
+  
+  * Multi Container Application Section-9
+  
+  * Setting env variable inside a container, section 9, 117
+       
