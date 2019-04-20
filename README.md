@@ -23,6 +23,7 @@
       - docker run <image-name> = docker create <image-name> + docker start <container-ID>   
       * need to use docker start -a <container-ID>   => -a watches the container for o/p and prints it to console
       * if we forget to use "-a" we can use => docker logs <container-id>
+      * docker logs -f <C_ID>
       
     * Executing commands in running Containers
       - docker exec -it <container-id> <command>
@@ -176,4 +177,24 @@
   * Multi Container Application Section-9
   
   * Setting env variable inside a container, section 9, 117
-       
+  
+  * Production multi container deployment
+  
+  
+  Delete Images forcefully
+    : docker rmi $(docker images -q) -f
+    
+    * Container : 
+      * docker rm <CONTAINER ID>
+    
+    * https://stackoverflow.com/questions/38118791/can-t-delete-docker-image-with-dependent-child-images
+    * https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes   
+    
+  * Inspecting docker images 
+    docker image inspect mongo     
+    
+  Cleaning up containers Section 3, 23 JT
+    * kill all running containers
+     - docker kill $(docker ps -q)
+    * delete all stopped docker Containers
+     - docker rm $(docker ps -a -q)
