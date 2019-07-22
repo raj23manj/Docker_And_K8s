@@ -198,3 +198,6 @@
      - docker kill $(docker ps -q)
     * delete all stopped docker Containers
      - docker rm $(docker ps -a -q)
+  
+ * Cloning Private Repos:
+   https://stackoverflow.com/questions/23391839/clone-private-git-repo-with-dockerfile
