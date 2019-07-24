@@ -201,3 +201,4 @@
   
  * Cloning Private Repos:
    https://stackoverflow.com/questions/23391839/clone-private-git-repo-with-dockerfile
+   https://stackoverflow.com/questions/18136389/using-ssh-keys-inside-docker-container/24937401
