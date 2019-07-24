@@ -202,3 +202,5 @@
  * Cloning Private Repos:
    https://stackoverflow.com/questions/23391839/clone-private-git-repo-with-dockerfile
    https://stackoverflow.com/questions/18136389/using-ssh-keys-inside-docker-container/24937401
+   
+   https://stackoverflow.com/questions/50057180/how-do-i-connect-to-local-machine-from-inside-of-docker-container-created-by-doc
