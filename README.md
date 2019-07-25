@@ -268,8 +268,11 @@ docker container exec -it
     - docker network ls
     - docker network inspect  bridge
     - docker network create — driver  (bridge, host, none)
-    - docker network connect 
+    - docker network connect network id container id
     - docker network disconnect 
 
   * DNS and how container find Each Other
-     - docker container run -d —name my_nginx —network my_app_net ngnix 
+     - docker container run -d —name my_nginx —network my_app_net ngnix
+
+  * Network-alias
+    - docker container run -d —net dude —net-alias search ubuntu
