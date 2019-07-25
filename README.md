@@ -281,3 +281,4 @@ docker container exec -it
 
   * https://dzone.com/articles/docker-container-resource-management-cpu-ram-and-i
   * https://linuxhint.com/docker_compose_memory_limits/
+  * https://stackoverflow.com/questions/44533319/how-to-assign-more-memory-to-docker-container
