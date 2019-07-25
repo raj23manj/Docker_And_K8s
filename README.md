@@ -276,3 +276,7 @@ docker container exec -it
 
   * Network-alias
     - docker container run -d —net dude —net-alias search ubuntu
+  
+  * Memory
+
+  * https://dzone.com/articles/docker-container-resource-management-cpu-ram-and-i
