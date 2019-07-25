@@ -204,3 +204,27 @@
    https://stackoverflow.com/questions/18136389/using-ssh-keys-inside-docker-container/24937401
    
    https://stackoverflow.com/questions/50057180/how-do-i-connect-to-local-machine-from-inside-of-docker-container-created-by-doc
+
+
+
+Docker Captain:
+
+docker container ls  => docker ps
+docker container ls  -a 
+
+docker container run => docker run
+				   port forwarding  as daemon			  image       CMD
+docker container run —publish 80:80 —detach —name webhost ngnix:1.11 ngnix -T
+=> webhost comes under names in docker ps
+
+docker container top webhost 
+
+docker container —help
+
+
+to remove:
+
+docker container rm id id id
+
+when says being used 
+can use -f or docker container stop
