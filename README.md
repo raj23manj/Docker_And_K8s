@@ -209,6 +209,8 @@
 
 Docker Captain:
 
+* Docker Basics: 
+
 docker container ls  => docker ps
 docker container ls  -a 
 
@@ -222,9 +224,35 @@ docker container top webhost
 docker container —help
 
 
-to remove:
+* to remove:
 
 docker container rm id id id
 
 when says being used 
 can use -f or docker container stop
+
+
+* commands to see what is going on inside containers:
+
+docker container top
+  - process list in one container 
+  -  docker container top webhost
+ 
+docker container inspect
+  - details of the container config
+
+docker container stats
+  - performance stats for all containers
+
+* Getting inside a container and shell :
+ 
+docker container run -it
+   - interactively	(27)						(override default command)
+   -  docker container run -it —name proxy nginx bash
+
+Start an existing container:
+  - docker container start -ai ubuntu
+
+docker container exec -it
+  - run additional commands inside existing running containers
+  - docker container exec -it mysql bash
