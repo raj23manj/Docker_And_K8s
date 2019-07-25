@@ -256,3 +256,20 @@ Start an existing container:
 docker container exec -it
   - run additional commands inside existing running containers
   - docker container exec -it mysql bash
+  
+ * Network Concepts:   my ip adds => ifconfig en0 (28)
+       - docker container port webhost
+         - list the ports which are being forwarded
+       
+      - To get specific information like IP, need to the format from inspect command
+         - docker container inspect --format '{{ .NetworkSettings.IPAddress  }}' analytics20-frontend_policy-analytics_1 
+
+  * Docker Networks
+    - docker network ls
+    - docker network inspect  bridge
+    - docker network create — driver  (bridge, host, none)
+    - docker network connect 
+    - docker network disconnect 
+
+  * DNS and how container find Each Other
+     - docker container run -d —name my_nginx —network my_app_net ngnix 
