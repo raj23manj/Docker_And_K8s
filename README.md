@@ -307,6 +307,21 @@ docker container exec -it
       - The big one is usually docker image prune -a which will remove all images you're not using. Use docker system df to see space usage.   
     
   
+    * Persistent Data
+        -  docker volume —help 
+        * Prune volumes, clean up unused volumes
+           - docker volume prune
+        * Named Volumes:
+           - docker container run -d —name mysql -e MY_ENV -v mysql:/var/lib/mysql mysql
+
+        * create volumes
+           - docker volume  create      
+       
+        * Bind Mounts:
+           -  example
+               - run -v /users/raj/stuff:/path/container
+
+  
   * Memory
 
   * https://dzone.com/articles/docker-container-resource-management-cpu-ram-and-i
