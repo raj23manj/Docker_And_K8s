@@ -276,6 +276,31 @@ docker container exec -it
 
   * Network-alias
     - docker container run -d —net dude —net-alias search ubuntu
+    
+    
+ 
+
+* Images
+   
+      * Image Layers:
+        -  docker history imaged
+        - docker image inspect imagid
+      
+       * Tagging and Pushing to Registry
+         - renaming a tag from exisiting 
+           - docker image tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+               ex   docker image tag  nginx raj-nginx:tag1
+
+      * To push we need to login in docker hub
+         - docker login
+         - docker logout
+
+     * To push
+        - docker image push image-name 
+
+    * Building Images
+      - docker image build -t test .    
+    
   
   * Memory
 
