@@ -320,6 +320,18 @@ docker container exec -it
         * Bind Mounts:
            -  example
                - run -v /users/raj/stuff:/path/container
+	       
+  * Docker Compose
+   -  ideal only for local development only
+   - docker compose up -> starts container with volumes and networks => docker-compose -f xxx
+   - docker compose down -> stops and removes volumes and containers
+   - docker-compose top -f docker-compose.dev.yml
+   - docker-compose down -v => remove all volumes
+   - docker-compose down —help  => see local arg
+
+Good Git Command          (latest commit with all files)
+- git clone —branch xxx —depth 1 https:….
+       
 
   
   * Memory
