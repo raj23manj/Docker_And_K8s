@@ -332,10 +332,67 @@ docker container exec -it
 Good Git Command          (latest commit with all files)
 - git clone —branch xxx —depth 1 https:….
        
+       
+Swarms:
+  * not enabled by default, swarm mode
+
+   * creating a swarm service, single mode.
+     * docker info  => check if swarm is active or no.
+     * docker swarm init => to initialize a single swarm node with all the features and functionalities. It gives command to create other nodes to join this one 
+         with token(docker swarm join SWMTKN-.x.x.x\ ip)
+         * Lots of PKI and Security automation
+           * Root Signing Certificate created for our Swarm
+           * Certificate is issued for first Manager Mode
+           * Join tokens are created to join with other nodes
+          * Raft database created to store root CA, configs and secrets
+            * this DB is replicated in other nodes for their internal use
+            * Encrypted by default on disk
+            *  no need for another key/value system to hold orchestrations/secrets
+            * replicates logs amongst managers via mutual TLS in “control plane”
+     * docker node ls 
+       * displays details of the node
+       * for other commands, docker node —help
+
+    * docker service —help
+      * create => a service
+      * update <id> —replicas no => to add replica
+      * docker service ps <name>
+
+   * Overlay Networking:
+     * swarm wide network
+     *  —driver overlay
+      * scaling out with routing mesh
+        * load balances swarm services across their tasks(instance of service)
+     * Stacks 
+          * stacks for service(compose files) but names as stack.yml, with deploy commands
+           * docker stack deploy
+           * using external => means already exists use them
+           * used deploy: key
+           * docker stack deploy -c xxx-stack.yml  <name> => -c (compose)    
+           * docker stack rm <name>
+
+     * Secrets
+       * creating using a file
+          * docker secret create psql_user psql_user.txt
+       * Using command line
+          * echo “asdasdas” | docker secret create psql_pass -
+       * using Stacks
+          * need version 3.1 min
+           *   
+                services:
+                    image:  postgres
+                    secrets:
+                           - sql_user
+                           - sql_pss            
+                secrets:
+                      sql_user:
+                            file: ./….
+                      sql_pss:
+                           file: .///
+       
 
   
-  * Memory
-
+* Memory
   * https://dzone.com/articles/docker-container-resource-management-cpu-ram-and-i
   * https://linuxhint.com/docker_compose_memory_limits/
   * https://stackoverflow.com/questions/44533319/how-to-assign-more-memory-to-docker-container
