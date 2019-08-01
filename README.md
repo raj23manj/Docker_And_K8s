@@ -390,6 +390,25 @@ Swarms:
                       sql_pss:
                            file: .///
        
+        * Full App LifeCycle with Compose
+     *  docker-compose.override.yml => gets picked up automatically
+     * keep all the common images in docker-compose.yml
+     * docker-compose -f docker-compose.yml -f docker-compose.test.ymp up 
+     * config (to club both files for a prod file)
+        * docker-compose -f docker-compose.yml -f docker-compose.test.ymp config > output.yml
+     * Service Updates
+        * 
+
+     * Health Checks
+       * docker container ls
+       * docker container inspect
+       * docker run —health-cmd=“curl -f localhost:9200/_cluster/health || false” \ —health-interval=5s \ —health-retries=3 \ health-timeout=2s \ —health-start-period=15s\ elastic search:2
+        * options to add in docker file
+           * —interval=DURATION (default 30s)
+           * —timeout=DURATION (default 30s)
+           * —start-period=DURATION (default 0s)
+           * —retries=N(default=3)
+
 
   
 * Memory
