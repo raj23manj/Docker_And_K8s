@@ -415,3 +415,44 @@ Swarms:
   * https://dzone.com/articles/docker-container-resource-management-cpu-ram-and-i
   * https://linuxhint.com/docker_compose_memory_limits/
   * https://stackoverflow.com/questions/44533319/how-to-assign-more-memory-to-docker-container
+  
+  
+  K8’s
+
+brew install kubectl => to create a virtual node
+install virtual box
+brew cask install qinikube => to add containers
+
+minikube start
+minikube status
+minikube ip
+
+kubectl cluster-info
+
+pods => have multiple containers, run one container unless there is tight dependency with each other
+
+kubectl apply -f <filename> => pushes the services, pods into VM and starts automatically
+
+kubectl get pods
+kubectl get services
+kubectl get  deployments
+
+kubectl describe <object type> <object name>
+				pod/service    
+
+kubectl pods -o wide  -> gives more info
+
+
+To update the image to latest by forcing ctl
+kubectl set image <object_type> / <object_name> <container_name> = <new image to use>
+
+
+To remove a object
+
+kubectl delete -f <config file>
+
+container -> pod -> node -> cluster
+
+command to to see containers running inside the VM (193)
+eval $(minikube docker-env)
+
