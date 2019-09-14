@@ -417,7 +417,7 @@ Swarms:
   * https://stackoverflow.com/questions/44533319/how-to-assign-more-memory-to-docker-container
   
   
-  K8’s
+# K8’s
 
 brew install kubectl => to create a virtual node
 install virtual box
@@ -456,3 +456,35 @@ container -> pod -> node -> cluster
 command to to see containers running inside the VM (193)
 eval $(minikube docker-env)
 
+Service:
+   ClusterIp  -> expose a set of pods to other objects in the cluster
+   NodePort -> Expose a set of pods to outside world(only dev purpose)
+   LoadBalancer -> legacy way of getting network traffic into a cluster
+   Ingress -> securely stores a piece of information in the cluster, such as a DB password
+
+pod, deployment, service,  Secrets  => types of objects
+
+kubectl logs <name of type>
+
+Volume:
+
+   Volume in k8s is at pod level only not like docker. For that we need to use
+
+   Persistent Volume Claim
+   Persistent Volume
+
+kubectl get storageclass
+kubectl describe storageclass
+
+awsblockstore default by amazon
+
+kubectl get pv -> persistent volumes
+kubectl get pvc -> claims(bill board like showing what all is there)
+
+Secrets as imperative:
+  kubectl create secret <secret-type> <secret_name> —from-literal key=value
+
+secret-type:
+  * generic
+  * docker-registry 
+  * tls -> http setup
