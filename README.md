@@ -207,26 +207,25 @@
 
 
 
-Docker Captain:
+#Docker Captain:
 
 * Docker Basics: 
 
 docker container ls  => docker ps
 docker container ls  -a 
-
+docker container logs webhost => displays logs of couple lines
 docker container run => docker run
-				   port forwarding  as daemon			  image       CMD
+port forwarding  as daemon			           image       CMD
 docker container run —publish 80:80 —detach —name webhost ngnix:1.11 ngnix -T
 => webhost comes under names in docker ps
 
-docker container top webhost 
-
 docker container —help
-
 
 * to remove:
 
 docker container rm id id id
+
+docker container -f id => force remove a running container
 
 when says being used 
 can use -f or docker container stop
@@ -234,10 +233,15 @@ can use -f or docker container stop
 
 * commands to see what is going on inside containers:
 
+docker container top webhost => gives PID user  and command run
+
 docker container top
   - process list in one container 
   -  docker container top webhost
- 
+
+docker top mongo 
+ => to list the process running inside a container
+
 docker container inspect
   - details of the container config
 
