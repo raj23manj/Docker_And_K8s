@@ -262,8 +262,9 @@ docker container exec -it
   - docker container exec -it mysql bash
   
  * Network Concepts:   my ip adds => ifconfig en0 (28)
-       - docker container port webhost
-         - list the ports which are being forwarded
+ * 
+       - docker container port <container-name>
+       - list the ports which are being forwarded
        
       - To get specific information like IP, need to the format from inspect command
          - docker container inspect --format '{{ .NetworkSettings.IPAddress  }}' analytics20-frontend_policy-analytics_1 
@@ -271,12 +272,15 @@ docker container exec -it
   * Docker Networks
     - docker network ls
     - docker network inspect  bridge
+    - docker network create --help
     - docker network create — driver  (bridge, host, none)
+    - docker network --help
     - docker network connect network id container id
     - docker network disconnect 
 
   * DNS and how container find Each Other
      - docker container run -d —name my_nginx —network my_app_net ngnix
+     - docker network inspect my_app_net
 
   * Network-alias
     - docker container run -d —net dude —net-alias search ubuntu
