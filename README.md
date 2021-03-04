@@ -278,6 +278,9 @@ docker container exec -it
     - docker network connect network id container id
     - docker network disconnect 
 
+  * DNS resolution of containers inside the same vpn network using the docker name
+   --link is used for containers to join a network
+ 	
   * DNS and how container find Each Other
      - docker container run -d —name my_nginx —network my_app_net ngnix
      - docker network inspect my_app_net
@@ -286,7 +289,6 @@ docker container exec -it
     - docker container run -d —net dude —net-alias search ubuntu
     
     
- 
 
 * Images
    
