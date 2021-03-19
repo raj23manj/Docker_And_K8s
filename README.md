@@ -294,7 +294,8 @@ docker container exec -it
    
       * Image Layers:
         -  docker history imaged
-        - docker image inspect imagid
+        -   new command => docker image history nginx:latest
+        - docker image inspect imagid  => docker image inspect <>
       
        * Tagging and Pushing to Registry
          - renaming a tag from exisiting 
