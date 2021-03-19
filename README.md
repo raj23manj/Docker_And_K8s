@@ -310,13 +310,18 @@ docker container exec -it
         - docker image push image-name 
 
     * Building Images
-      - docker image build -t test .    
+      - docker image build -t test .
+      - section 40, 4:49 how to handle logs inside docker. Docker throws all the errors and logs to /dev/stdout and /dev/stderr     
+      - in docker files keep the things that chage the least up and the ones regularly changing keep it down. So that docker
+  	caches it and runs faster.
+      - When using an existing image from docker registry, if we do not give a "CMD" to the docker, it will inherit from the image we specified
+	in the "FROM" section	
       
     * Prune
       -  docker image prune to clean up just "dangling" images
       - docker system prune will clean up everything
-      - The big one is usually docker image prune -a which will remove all images you're not using. Use docker system df to see space usage.   
-    
+      - The big one is usually "docker image prune -a" which will remove all images you're not using. Use "docker system df" to see space usage.   
+      - https://youtu.be/_4QzP7uwtvI	
   
     * Persistent Data
         -  docker volume —help 
