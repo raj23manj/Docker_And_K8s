@@ -324,6 +324,8 @@ docker container exec -it
       - https://youtu.be/_4QzP7uwtvI	
   
     * Persistent Data
+	- Containers are usually immutable(does not change) and ephemeral(temp, disposable)    
+	- "immutable-infrastructure": only re-deploy containers, never change
         -  docker volume —help 
         * Prune volumes, clean up unused volumes
            - docker volume prune
@@ -334,6 +336,8 @@ docker container exec -it
            - docker volume  create      
        
         * Bind Mounts:
+        * mounting/sharing a host file into a container
+	* link container path to host path
            -  example
                - run -v /users/raj/stuff:/path/container
 	       
