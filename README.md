@@ -331,15 +331,24 @@ docker container exec -it
            - docker volume prune
         * Named Volumes:
            - docker container run -d —name mysql -e MY_ENV -v mysql:/var/lib/mysql mysql
+        * in mac or windows docker runs on a linux VM, so creating a  volume will create in the host(VM) not on mac, but bind mount we can metion the path itself directly
+        * to get details about volumes:
+          - docker volume ls
+             in this o/p => destination is host path and source is inside container path
+
+    * Assignment 
+      - how to set up postgres in containers
 
         * create volumes
            - docker volume  create      
        
         * Bind Mounts:
+        *  local developments, 49
         * mounting/sharing a host file into a container
 	* link container path to host path
            -  example
                - run -v /users/raj/stuff:/path/container
+               - run -v $(pwd):/path/container
 	       
   * Docker Compose
    -  ideal only for local development only
