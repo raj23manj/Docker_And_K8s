@@ -343,7 +343,7 @@ docker container exec -it
            - docker volume  create      
        
         * Bind Mounts:
-        *  local developments, 49
+        *  local developments, 49 & 52
         * mounting/sharing a host file into a container
 	* link container path to host path
            -  example
