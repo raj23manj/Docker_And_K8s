@@ -351,7 +351,8 @@ docker container exec -it
                - run -v $(pwd):/path/container
 	       
   * Docker Compose
-   -  ideal only for local development only
+   - set up multi db with a proxy db in from 55
+   - ideal only for local development only
    - docker compose up -> starts container with volumes and networks => docker-compose -f xxx
    - docker compose down -> stops and removes volumes and containers
    - docker-compose top -f docker-compose.dev.yml
